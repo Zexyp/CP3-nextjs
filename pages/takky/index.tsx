@@ -80,7 +80,7 @@ function Index() {
     return (
         <div className={styles.app}>
             <div>
-                <h1>Nick Gurr's App</h1>
+                <h1>Piskvoneco</h1>
                 <Board
                     array={array}
                     onClick={handleBoardClick}

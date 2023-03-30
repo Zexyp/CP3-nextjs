@@ -17,7 +17,7 @@ export function Board(props: BoardPropsIterface): ReactElement {
             <div className={styles.board}>
                 {
                     props.array.map((v, i) => {
-                        return (<button onClick={() => props.onClick(i)}>{v.toString() != "NaN" ? v : ""}</button>)
+                        return (<button key={`tile${i}`} onClick={() => props.onClick(i)}>{v.toString() != "NaN" ? v : ""}</button>)
                     })
                 }
             </div>
