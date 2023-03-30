@@ -14,7 +14,7 @@ export function History(props: HistoryPropsInteface): ReactElement {
                 {
                     props.elements.map((e, i) => {
                         return (
-                            <li onClick={() => props.onClick(i)}>{e}</li>
+                            <li key={`hist${i}`} onClick={() => props.onClick(i)}>{e}</li>
                         )
                     })
                 }
