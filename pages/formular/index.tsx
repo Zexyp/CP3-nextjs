@@ -10,16 +10,16 @@ export default function Index() {
     let [emailValid, setEmailValid] = useState<boolean>(false);
     let [phoneValid, setPhoneValid] = useState<boolean>(false);
 
-    function validateName(e: ChangeEvent<HTMLInputElement>|null) {
-        setNameValid(!!name)
+    function validateName(e: ChangeEvent<HTMLInputElement>) {
+        setNameValid(!!e.target.value)
     }
 
-    function validateEmail(e: ChangeEvent<HTMLInputElement>|null) {
-        setEmailValid(email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) != null)
+    function validateEmail(e: ChangeEvent<HTMLInputElement>) {
+        setEmailValid(e.target.value.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) != null)
     }
 
-    function validatePhone(e: ChangeEvent<HTMLInputElement>|null) {
-        setPhoneValid(phone.match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/) != null)
+    function validatePhone(e: ChangeEvent<HTMLInputElement>) {
+        setPhoneValid(e.target.value.match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/) != null)
     }
 
     return (
@@ -27,7 +27,7 @@ export default function Index() {
             <h1>Crentials Harvestor</h1>
             <label htmlFor="name">Name</label>
             <br/>
-            <input className={emailValid ? "" : styles.suspicious} id="name" value={name} onChange={e => { setName(e.target.value); validateName(e); }}/>
+            <input className={nameValid ? "" : styles.suspicious} id="name" value={name} onChange={e => { setName(e.target.value); validateName(e); }}/>
             <br/>
             <label htmlFor="email">Email</label>
             <br/>

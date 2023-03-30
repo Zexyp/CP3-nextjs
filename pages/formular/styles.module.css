@@ -1,3 +1,5 @@
 .suspicious {
-    border-color: red;
+    border-color: #f00;
+    background-color: #f008;
+    border-style: solid;
 }
